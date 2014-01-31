@@ -1,4 +1,4 @@
-# [node-zopflipng-bin](https://npmjs.org/package/zopflipng-bin)
+# [node-zopflipng-bin](https://npmjs.org/package/zopflipng-bin) [![Build Status](https://travis-ci.org/1000ch/node-zopflipng-bin.png?branch=master)](https://travis-ci.org/1000ch/node-zopflipng-bin)
 
 ## About
 
