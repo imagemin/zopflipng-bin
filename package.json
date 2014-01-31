@@ -16,6 +16,9 @@
     "url": "http://1000ch.net"
   },
   "main": "lib/zopflipng",
+  "scripts": {
+    "test": "mocha ./test/*.js"
+  },
   "bin": {
     "pngcrush": "bin/zopflipng.js"
   },
@@ -32,6 +35,9 @@
   "dependencies": {
     "bin-wrapper": "~0.1.9",
     "chalk": "~0.4.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
   },
   "license": "BSD",
   "bugs": {
