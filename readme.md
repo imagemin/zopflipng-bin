@@ -12,7 +12,7 @@ zopflipng (part of [zopfli](https://code.google.com/p/zopfli/)) is Node.js wrapp
 $ npm install -g zopflipng-bin
 ```
 
-## Usage with NodeJS
+## Usage with Node.js
 
 ```js
 var execFile = require('child_process').execFile;

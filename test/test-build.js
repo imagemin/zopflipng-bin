@@ -7,11 +7,11 @@ var options = require('../lib/zopflipng').options;
 var path = require('path');
 
 describe('zopflipng.build()', function () {
-  it('should rebuild the zopflipng binaries', function (cb) {
+  it('should rebuild the zopflipng binaries', function (callback) {
     this.timeout(false);
     var bin = new Bin(options);
 
-    bin.path = path.join(__dirname, '../tmp', bin.bin);
+    bin.path = path.join(__dirname, '../vendor', bin.bin);
     bin.buildScript = 'make zopflipng && mv zopflipng ' + path.join(__dirname, '../vendor');
 
     bin.build(function () {
@@ -19,7 +19,7 @@ describe('zopflipng.build()', function () {
       var actualCTime = fs.statSync(bin.path).ctime;
 
       assert(actualCTime !== origCTime);
-      cb();
+      callback();
     });
   });
 });
