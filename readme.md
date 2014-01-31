@@ -1,4 +1,4 @@
-# node-zopflipng-bin
+# [node-zopflipng-bin](https://npmjs.org/package/zopflipng-bin)
 
 ## About
 
@@ -26,4 +26,4 @@ execFile(zopflipngPath, ['-m', '--lossy_8bit', 'dest.png'], function() {
 ## License
 
 This is MIT.
-[zopfli](https://code.google.com/p/zopfli/) is licensed under (Apache License, Version 2.0)[http://www.apache.org/licenses/LICENSE-2.0].
+[zopfli](https://code.google.com/p/zopfli/) is licensed under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
