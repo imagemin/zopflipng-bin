@@ -1,0 +1,44 @@
+{
+  "name": "zopflipng-bin",
+  "version": "0.0.1",
+  "description": "Zopflipng wrapper that makes it seamlessly available as a local dependency on OS X, Linux",
+  "keywords": [
+    "png",
+    "compress",
+    "minify",
+    "optimize",
+    "img",
+    "image"
+  ],
+  "author": {
+    "name": "1000ch",
+    "email": "orz1000ch@gmail.com",
+    "url": "http://1000ch.net"
+  },
+  "main": "lib/zopflipng",
+  "bin": {
+    "pngcrush": "bin/zopflipng.js"
+  },
+  "scripts": {
+    "postinstall": "node lib/check.js"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/1000ch/node-zopflipng-bin.git"
+  },
+  "dependencies": {
+    "bin-wrapper": "~0.1.9",
+    "chalk": "~0.4.0"
+  },
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/1000ch/node-zopflipng-bin/issues"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ]
+}
