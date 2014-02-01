@@ -2,7 +2,7 @@
 
 ## About
 
-zopflipng (part of [zopfli](https://code.google.com/p/zopfli/)) is Node.js wrapper that optimize PNG images.
+zopflipng (part of [zopfli](https://code.google.com/p/zopfli/)) Node.js wrapper that optimize PNG images.
 
 > Zopfli Compression Algorithm is a new zlib (gzip, deflate) compatible compressor. This compressor takes more time (~100x slower), but compresses around 5% better than zlib and better than any other zlib-compatible compressor we have found.
 
