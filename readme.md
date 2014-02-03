@@ -6,6 +6,8 @@ zopflipng (part of [zopfli](https://code.google.com/p/zopfli/)) Node.js wrapper 
 
 > Zopfli Compression Algorithm is a new zlib (gzip, deflate) compatible compressor. This compressor takes more time (~100x slower), but compresses around 5% better than zlib and better than any other zlib-compatible compressor we have found.
 
+[![NPM](https://nodei.co/npm/zopflipng-bin.png)](https://nodei.co/npm/zopflipng-bin/)
+
 ## Install
 
 ```sh
