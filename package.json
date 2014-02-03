@@ -1,6 +1,6 @@
 {
   "name": "zopflipng-bin",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Zopflipng wrapper that makes it seamlessly available as a local dependency on OS X, Linux",
   "keywords": [
     "png",
@@ -20,8 +20,8 @@
     "zopflipng": "bin/zopflipng.js"
   },
   "scripts": {
-    "test": "mocha ./test/*.js",
-    "postinstall": "node ./lib/check.js"
+    "test": "mocha ./test/test-build.js ./test/test-path.js",
+    "postinstall": "node ./lib/build.js"
   },
   "engines": {
     "node": ">=0.10.0"
