@@ -16,14 +16,12 @@
     "url": "http://1000ch.net"
   },
   "main": "lib/zopflipng",
-  "scripts": {
-    "test": "mocha ./test/*.js"
-  },
   "bin": {
     "zopflipng": "bin/zopflipng.js"
   },
   "scripts": {
-    "postinstall": "node lib/check.js"
+    "test": "mocha ./test/*.js",
+    "postinstall": "node ./lib/check.js"
   },
   "engines": {
     "node": ">=0.10.0"
