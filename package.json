@@ -1,6 +1,6 @@
 {
   "name": "zopflipng-bin",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Zopflipng wrapper that makes it seamlessly available as a local dependency on OS X, Linux",
   "keywords": [
     "png",
