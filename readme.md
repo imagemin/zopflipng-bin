@@ -32,5 +32,5 @@ execFile(zopflipngPath, ['-m', '--lossy_8bit', 'dest.png'], function() {
 
 ## License
 
-This is MIT.
+This is licensed under BSD.
 [zopfli](https://code.google.com/p/zopfli/) is licensed under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
