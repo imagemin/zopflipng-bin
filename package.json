@@ -1,6 +1,6 @@
 {
   "name": "zopflipng-bin",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Zopflipng wrapper that makes it seamlessly available as a local dependency on OS X, Linux",
   "keywords": [
     "png",
@@ -12,7 +12,7 @@
   ],
   "author": {
     "name": "1000ch",
-    "email": "orz1000ch@gmail.com",
+    "email": "shogo.sensui@gmail.com",
     "url": "http://1000ch.net"
   },
   "main": "lib/zopflipng",
@@ -43,6 +43,7 @@
   },
   "files": [
     "bin",
-    "lib"
+    "lib",
+    "vendor"
   ]
 }
