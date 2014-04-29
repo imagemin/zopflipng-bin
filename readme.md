@@ -1,7 +1,5 @@
 # [node-zopflipng-bin](https://npmjs.org/package/zopflipng-bin)
 
-## About
-
 zopflipng (part of [zopfli](https://code.google.com/p/zopfli/)) Node.js wrapper that optimize PNG images.
 
 > Zopfli Compression Algorithm is a new zlib (gzip, deflate) compatible compressor. This compressor takes more time (~100x slower), but compresses around 5% better than zlib and better than any other zlib-compatible compressor we have found.
@@ -14,16 +12,20 @@ zopflipng (part of [zopfli](https://code.google.com/p/zopfli/)) Node.js wrapper 
 ## Install
 
 ```sh
-$ npm install -g zopflipng-bin
+$ npm install --save zopflipng-bin
 ```
 
-## Usage with Node.js
+## Usage
 
 ```js
 var execFile = require('child_process').execFile;
-var zopflipngPath = require('zopflipng-bin').path;
+var zopfli= require('zopflipng-bin').path;
 
-execFile(zopflipngPath, ['-m', '--lossy_8bit', 'dest.png'], function() {
+execFile(zopfli, ['-m', '--lossy_8bit', 'input.png', 'outout.png'], function (err) {
+  if (err) {
+    throw err;
+  }
+
   console.log('Image minified');
 });
 ```
@@ -31,4 +33,5 @@ execFile(zopflipngPath, ['-m', '--lossy_8bit', 'dest.png'], function() {
 ## License
 
 This is licensed under BSD.
+
 [zopfli](https://code.google.com/p/zopfli/) is licensed under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).

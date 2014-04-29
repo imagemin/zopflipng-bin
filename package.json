@@ -15,13 +15,12 @@
     "email": "shogo.sensui@gmail.com",
     "url": "http://1000ch.net"
   },
-  "main": "lib/zopflipng",
   "bin": {
-    "zopflipng": "bin/zopflipng.js"
+    "zopflipng": "cli.js"
   },
   "scripts": {
-    "test": "mocha ./test/test-build.js ./test/test-path.js",
-    "postinstall": "node ./lib/build.js"
+    "test": "mocha --reporter list --timeout 0",
+    "postinstall": "node index.js"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -31,19 +30,21 @@
     "url": "git://github.com/1000ch/node-zopflipng-bin.git"
   },
   "dependencies": {
-    "bin-wrapper": "~0.1.9",
-    "chalk": "~0.4.0"
+    "bin-build": "^0.1.0",
+    "bin-wrapper": "^0.3.0",
+    "chalk": "^0.4.0"
   },
   "devDependencies": {
-    "mocha": "~1.17.1"
+    "bin-check": "^0.1.0",
+    "mocha": "^1.18.2",
+    "rimraf": "^2.2.6"
   },
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/1000ch/node-zopflipng-bin/issues"
   },
   "files": [
-    "bin",
-    "lib",
-    "vendor"
+    "cli.js",
+    "index.js"
   ]
 }
