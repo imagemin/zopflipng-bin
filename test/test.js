@@ -9,7 +9,7 @@ var fs = require('fs');
 var path = require('path');
 var rm = require('rimraf');
 
-describe('pngcrush()', function () {
+describe('zopflipng()', function () {
   afterEach(function (cb) {
     rm(path.join(__dirname, 'tmp'), cb);
   });
