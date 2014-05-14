@@ -15,6 +15,11 @@
     "email": "shogo.sensui@gmail.com",
     "url": "http://1000ch.net"
   },
+  "maintainer": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
   "bin": {
     "zopflipng": "cli.js"
   },
