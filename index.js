@@ -28,7 +28,7 @@ fs.exists(bin.use(), function (exists) {
 
         var builder = new BinBuild()
           .src('https://zopfli.googlecode.com/files/zopfli-1.0.0.zip')
-          .make('make && mkdir ' + bin.dest() + ' && mv ./zopfli ' + bin.use());
+          .make('make && mkdir -p ' + bin.dest() + ' && mv ./zopfli ' + bin.use());
 
         return builder.build(function (err) {
           if (err) {
