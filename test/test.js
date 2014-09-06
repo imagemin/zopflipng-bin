@@ -34,7 +34,7 @@ describe('zopflipng()', function () {
   it('should return path to binary and verify that it is working', function (cb) {
     var binPath = require('../').path;
 
-    binCheck(binPath, ['--version'], function (err, works) {
+    binCheck(binPath, ['--help'], function (err, works) {
       assert(!err);
       assert.equal(works, true);
       cb();
