@@ -1,4 +1,4 @@
-# [zopflipng-bin](https://npmjs.org/package/zopflipng-bin) [![Build Status](https://travis-ci.org/imagemin/zopflipng-bin.svg?branch=master)](https://travis-ci.org/imagemin/zopflipng-bin)
+# [zopflipng-bin](https://npmjs.org/package/zopflipng-bin) [![Build Status](http://img.shields.io/travis/imagemin/zopflipng-bin.svg?style=flat)](https://travis-ci.org/imagemin/zopflipng-bin) [![Build status](https://ci.appveyor.com/api/projects/status/wby51t87xij21y34)](https://ci.appveyor.com/project/ShinnosukeWatanabe/zopflipng-bin)
 
 zopflipng (part of [zopfli](https://code.google.com/p/zopfli/)) Node.js wrapper that optimize PNG images.
 
