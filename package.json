@@ -35,12 +35,12 @@
     "url": "git://github.com/imagemin/zopflipng-bin.git"
   },
   "dependencies": {
-    "bin-build": "^0.2.0",
-    "bin-wrapper": "^0.4.0",
+    "bin-build": "^1.0.1",
+    "bin-wrapper": "^1.0.1",
     "log-symbols": "^1.0.0"
   },
   "devDependencies": {
-    "bin-check": "^0.2.0",
+    "bin-check": "^1.0.0",
     "mocha": "^1.18.2",
     "rimraf": "^2.2.6"
   },
