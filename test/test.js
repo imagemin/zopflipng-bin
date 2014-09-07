@@ -1,61 +1,73 @@
-/*global afterEach, beforeEach, describe, it */
 'use strict';
 
-var assert = require('assert');
 var binCheck = require('bin-check');
 var BinBuild = require('bin-build');
 var execFile = require('child_process').execFile;
 var fs = require('fs');
+var mkdir = require('mkdirp');
 var path = require('path');
 var rm = require('rimraf');
+var test = require('ava');
+var tmp = path.join(__dirname, 'tmp');
 
-describe('zopflipng()', function () {
-  afterEach(function (cb) {
-    rm(path.join(__dirname, 'tmp'), cb);
-  });
+test('rebuild the zopflipng binaries', function (t) {
+	t.plan(3);
 
-  beforeEach(function (cb) {
-    fs.mkdir(path.join(__dirname, 'tmp'), cb);
-  });
+	var version = require('../').version;
+	var builder = new BinBuild()
+		.src('https://zopfli.googlecode.com/archive/' + version + '.tar.gz')
+		.cmd('mkdir -p ' + tmp)
+		.cmd('make zopflipng && mv ./zopflipng ' + path.join(tmp, 'zopflipng'));
 
-  it('should rebuild the zopfli binaries', function (cb) {
-    var tmp = path.join(__dirname, 'tmp');
-    var builder = new BinBuild()
-      .src('https://zopfli.googlecode.com/archive/b87006baae7ddb2142660621e20916d07928cbe2.tar.gz')
-      .cmd('make zopflipng && mkdir -p ' + tmp + ' && mv ./zopflipng ' + path.join(tmp, 'zopflipng'));
+	builder.build(function (err) {
+		t.assert(!err);
 
-    builder.build(function (err) {
-      assert(!err);
-      assert(fs.existsSync(path.join(tmp, 'zopflipng')));
-      cb();
-    });
-  });
+		fs.exists(path.join(tmp, 'zopflipng'), function (exists) {
+			t.assert(exists);
 
-  it('should return path to binary and verify that it is working', function (cb) {
-    var binPath = require('../').path;
+			rm(tmp, function (err) {
+				t.assert(!err);
+			});
+		});
+	});
+});
 
-    binCheck(binPath, ['--help'], function (err, works) {
-      assert(!err);
-      assert.equal(works, true);
-      cb();
-    });
-  });
+test('return path to binary and verify that it is working', function (t) {
+	t.plan(2);
 
-  it('should minify a PNG', function (cb) {
-    var binPath = require('../').path;
-    var args = [
-      '--lossy_8bit',
-      path.join(__dirname, 'fixtures/test.png'),
-      path.join(__dirname, 'tmp/test.png')
-    ];
+	binCheck(require('../').path, ['--help'], function (err, works) {
+		t.assert(!err);
+		t.assert(works);
+	});
+});
 
-    execFile(binPath, args, function (err) {
-      var src = fs.statSync(path.join(__dirname, 'fixtures/test.png')).size;
-      var dest = fs.statSync(path.join(__dirname, 'tmp/test.png')).size;
+test('minify a PNG', function (t) {
+	t.plan(6);
 
-      assert(!err);
-      assert(dest < src);
-      cb();
-    });
-  });
+	var args = [
+		'--lossy_8bit',
+		path.join(__dirname, 'fixtures/test.png'),
+		path.join(tmp, 'test.png')
+	];
+
+	mkdir(tmp, function (err) {
+		t.assert(!err);
+
+		execFile(require('../').path, args, function (err) {
+			t.assert(!err);
+
+			fs.stat(path.join(__dirname, 'fixtures/test.png'), function (err, a) {
+				t.assert(!err);
+
+				fs.stat(path.join(tmp, 'test.png'), function (err, b) {
+					t.assert(!err);
+					t.assert(b.size < a.size);
+
+					rm(tmp, function (err) {
+						t.assert(!err);
+					});
+				});
+			});
+		});
+	});
 });
