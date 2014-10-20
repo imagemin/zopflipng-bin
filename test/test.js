@@ -20,13 +20,13 @@ test('rebuild the zopflipng binaries', function (t) {
 		.cmd('make zopflipng && mv ./zopflipng ' + path.join(tmp, 'zopflipng'));
 
 	builder.run(function (err) {
-		t.assert(!err);
+		t.assert(!err, err);
 
 		fs.exists(path.join(tmp, 'zopflipng'), function (exists) {
 			t.assert(exists);
 
 			rm(tmp, function (err) {
-				t.assert(!err);
+				t.assert(!err, err);
 			});
 		});
 	});
@@ -36,7 +36,7 @@ test('return path to binary and verify that it is working', function (t) {
 	t.plan(2);
 
 	binCheck(require('../').path, ['--help'], function (err, works) {
-		t.assert(!err);
+		t.assert(!err, err);
 		t.assert(works);
 	});
 });
@@ -51,20 +51,20 @@ test('minify a PNG', function (t) {
 	];
 
 	mkdir(tmp, function (err) {
-		t.assert(!err);
+		t.assert(!err, err);
 
 		execFile(require('../').path, args, function (err) {
-			t.assert(!err);
+			t.assert(!err, err);
 
 			fs.stat(path.join(__dirname, 'fixtures/test.png'), function (err, a) {
-				t.assert(!err);
+				t.assert(!err, err);
 
 				fs.stat(path.join(tmp, 'test.png'), function (err, b) {
-					t.assert(!err);
+					t.assert(!err, err);
 					t.assert(b.size < a.size);
 
 					rm(tmp, function (err) {
-						t.assert(!err);
+						t.assert(!err, err);
 					});
 				});
 			});
