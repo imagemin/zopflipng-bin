@@ -19,7 +19,7 @@ test('rebuild the zopflipng binaries', function (t) {
 		.cmd('mkdir -p ' + tmp)
 		.cmd('make zopflipng && mv ./zopflipng ' + path.join(tmp, 'zopflipng'));
 
-	builder.build(function (err) {
+	builder.run(function (err) {
 		t.assert(!err);
 
 		fs.exists(path.join(tmp, 'zopflipng'), function (exists) {
