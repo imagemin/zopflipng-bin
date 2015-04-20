@@ -14,7 +14,7 @@ $ npm install --save zopflipng-bin
 
 ```js
 var execFile = require('child_process').execFile;
-var zopflipng = require('zopflipng-bin').path;
+var zopflipng = require('zopflipng-bin');
 
 execFile(zopflipng, ['-m', '--lossy_8bit', 'input.png', 'outout.png'], function (err) {
 	console.log('Image minified!');

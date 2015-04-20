@@ -33,7 +33,7 @@ it('rebuild the zopflipng binaries', function (cb) {
 });
 
 it('return path to binary and verify that it is working', function (cb) {
-	binCheck(require('../').path, ['--help'], function (err, works) {
+	binCheck(require('../'), ['--help'], function (err, works) {
 		assert(!err);
 		assert(works);
 		cb();
@@ -49,7 +49,7 @@ it('minify a PNG', function (cb) {
 		dest
 	];
 
-	execFile(require('../').path, args, function (err) {
+	execFile(require('../'), args, function (err) {
 		assert(!err);
 
 		compareSize(src, dest, function (err, res) {
