@@ -1,30 +1,28 @@
 'use strict';
 
-var binCheck = require('bin-check');
-var BinBuild = require('bin-build');
-var compareSize = require('compare-size');
 var execFile = require('child_process').execFile;
 var fs = require('fs');
 var path = require('path');
+var binCheck = require('bin-check');
+var BinBuild = require('bin-build');
+var compareSize = require('compare-size');
 var test = require('ava');
 var tmp = path.join(__dirname, 'tmp');
 
 test('rebuild the zopflipng binaries', function (t) {
 	t.plan(2);
 
-	var version = require('../').version;
-	var builder = new BinBuild()
-		.src('https://zopfli.googlecode.com/archive/' + version + '.tar.gz')
+	new BinBuild()
+		.src('https://github.com/google/zopfli/archive/bce73e2c23dc57a252802e4a6df97aa675fcea81.zip')
 		.cmd('mkdir -p ' + tmp)
-		.cmd('make zopflipng && mv ./zopflipng ' + path.join(tmp, 'zopflipng'));
+		.cmd('make zopflipng && mv ./zopflipng ' + path.join(tmp, 'zopflipng'))
+		.run(function (err) {
+			t.assert(!err, err);
 
-	builder.run(function (err) {
-		t.assert(!err, err);
-
-		fs.exists(path.join(tmp, 'zopflipng'), function (exists) {
-			t.assert(exists);
+			fs.exists(path.join(tmp, 'zopflipng'), function (exists) {
+				t.assert(exists);
+			});
 		});
-	});
 });
 
 test('return path to binary and verify that it is working', function (t) {
