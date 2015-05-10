@@ -30,7 +30,9 @@
     "img",
     "minify",
     "optimize",
-    "png"
+    "png",
+    "zopfli",
+    "zopflipng"
   ],
   "dependencies": {
     "bin-build": "^2.0.0",
