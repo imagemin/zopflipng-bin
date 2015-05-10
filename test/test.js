@@ -22,7 +22,7 @@ afterEach(function () {
 
 it('rebuild the zopflipng binaries', function (cb) {
 	new BinBuild()
-		.src('https://github.com/google/zopfli/archive/bce73e2c23dc57a252802e4a6df97aa675fcea81.zip')
+		.src('https://github.com/google/zopfli/archive/a29e46ba9f268ab273903558dcb7ac13b9fe8e29.zip')
 		.cmd('mkdir -p ' + tmp)
 		.cmd('make zopflipng && mv ./zopflipng ' + path.join(tmp, 'zopflipng'))
 		.run(function (err) {
