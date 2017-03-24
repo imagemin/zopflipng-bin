@@ -1,2 +1,4 @@
 'use strict';
-module.exports = require('./lib').path();
+const lib = require('./lib');
+
+module.exports = lib.path();

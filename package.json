@@ -1,7 +1,7 @@
 {
   "name": "zopflipng-bin",
   "version": "3.0.1",
-  "description": "zopflipng wrapper that makes it seamlessly available as a local dependency",
+  "description": "`zopflipng` wrapper that makes it seamlessly available as a local dependency",
   "license": "MIT",
   "repository": "imagemin/zopflipng-bin",
   "author": {
@@ -25,11 +25,11 @@
       "url": "github.com/shinnn"
     }
   ],
-  "engines": {
-    "node": ">=0.10.0"
-  },
   "bin": {
     "zopflipng": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
   },
   "scripts": {
     "postinstall": "node lib/install.js",
@@ -56,10 +56,10 @@
     "logalot": "^2.0.0"
   },
   "devDependencies": {
-    "bin-check": "^3.0.0",
-    "compare-size": "^1.0.1",
+    "bin-check": "^4.0.1",
+    "compare-size": "^3.0.0",
     "mkdirp": "^0.5.0",
-    "mocha": "^2.2.4",
+    "mocha": "^3.2.0",
     "rimraf": "^2.3.2",
     "xo": "*"
   }
