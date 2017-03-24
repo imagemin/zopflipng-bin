@@ -1,6 +1,6 @@
 {
   "name": "zopflipng-bin",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "`zopflipng` wrapper that makes it seamlessly available as a local dependency",
   "license": "MIT",
   "repository": "imagemin/zopflipng-bin",
