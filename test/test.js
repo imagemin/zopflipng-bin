@@ -35,8 +35,7 @@ it('rebuild the zopflipng binaries', function (cb) {
 });
 
 it('return path to binary and verify that it is working', function (cb) {
-	binCheck(require('../'), ['--help'], function (err, works) {
-		assert(!err);
+	binCheck(require('../'), ['--help']).then(function (works) {
 		assert(works);
 		cb();
 	});
