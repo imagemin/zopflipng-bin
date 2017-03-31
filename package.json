@@ -33,7 +33,7 @@
   },
   "scripts": {
     "postinstall": "node lib/install.js",
-    "test": "xo && mocha"
+    "test": "xo && ava"
   },
   "files": [
     "cli.js",
@@ -41,6 +41,7 @@
     "lib"
   ],
   "keywords": [
+    "imagemin",
     "compress",
     "image",
     "img",
@@ -51,16 +52,16 @@
     "zopflipng"
   ],
   "dependencies": {
-    "bin-build": "^2.0.0",
+    "bin-build": "^2.2.0",
     "bin-wrapper": "^3.0.0",
     "logalot": "^2.0.0"
   },
   "devDependencies": {
+    "ava": "*",
     "bin-check": "^4.0.1",
     "compare-size": "^3.0.0",
-    "mkdirp": "^0.5.0",
-    "mocha": "^3.2.0",
-    "rimraf": "^2.3.2",
+    "execa": "^0.6.3",
+    "tempy": "^0.1.0",
     "xo": "*"
   }
 }
