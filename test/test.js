@@ -12,7 +12,7 @@ test.cb('rebuild the zopflipng binaries', t => {
 	const tmp = tempy.directory();
 
 	new BinBuild()
-		.src('https://github.com/google/zopfli/archive/a29e46ba9f268ab273903558dcb7ac13b9fe8e29.zip')
+		.src('https://github.com/google/zopfli/archive/zopfli-1.0.1.zip')
 		.cmd(`mkdir -p ${tmp}`)
 		.cmd(`make zopflipng && mv ./zopflipng ${path.join(tmp, 'zopflipng')}`)
 		.run(err => {
