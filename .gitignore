@@ -1,3 +1,4 @@
 node_modules
 test/tmp
 vendor/zopfli*
+yarn.lock

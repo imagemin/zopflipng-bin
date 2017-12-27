@@ -8,7 +8,7 @@ You probably want [`imagemin-zopfli`](https://github.com/imagemin/imagemin-zopfl
 ## Install
 
 ```
-$ npm install --save zopflipng-bin
+$ npm install zopflipng-bin
 ```
 
 
