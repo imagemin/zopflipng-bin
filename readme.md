@@ -1,4 +1,4 @@
-# zopflipng-bin [![Build Status](https://travis-ci.org/imagemin/zopflipng-bin.svg?branch=master)](https://travis-ci.org/imagemin/zopflipng-bin)
+# zopflipng-bin [![Build Status](https://travis-ci.org/imagemin/zopflipng-bin.svg?branch=master)](https://travis-ci.org/imagemin/zopflipng-bin) [![Windows Build Status](https://img.shields.io/appveyor/ci/ShinnosukeWatanabe/zopflipng-bin/master.svg?label=Windows%20build)](https://ci.appveyor.com/project/ShinnosukeWatanabe/zopflipng-bin/branch/master)
 
 > [zopfli](https://github.com/google/zopfli) Compression Algorithm is a new zlib (gzip, deflate) compatible compressor that takes more time (~100x slower), but compresses around 5% better than zlib and better than any other zlib-compatible compressor
 

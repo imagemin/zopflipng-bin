@@ -9,6 +9,12 @@ const BinBuild = require('bin-build');
 const compareSize = require('compare-size');
 
 test.cb('rebuild the zopflipng binaries', t => {
+	// Skip the test on Windows
+	if (process.platform === 'win32') {
+		t.end();
+		return;
+	}
+
 	const tmp = tempy.directory();
 
 	new BinBuild()
