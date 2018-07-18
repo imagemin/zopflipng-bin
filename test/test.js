@@ -5,31 +5,27 @@ const test = require('ava');
 const execa = require('execa');
 const tempy = require('tempy');
 const binCheck = require('bin-check');
-const BinBuild = require('bin-build');
+const binBuild = require('bin-build');
 const compareSize = require('compare-size');
 
-test.cb('rebuild the zopflipng binaries', t => {
+test('rebuild the zopflipng binaries', async t => {
 	// Skip the test on Windows
 	if (process.platform === 'win32') {
-		t.end();
+		t.pass();
 		return;
 	}
 
 	const tmp = tempy.directory();
 
-	new BinBuild()
-		.src('https://github.com/google/zopfli/archive/a29e46ba9f268ab273903558dcb7ac13b9fe8e29.zip')
-		.cmd(`mkdir -p ${tmp}`)
-		.cmd(`make zopflipng && mv ./zopflipng ${path.join(tmp, 'zopflipng')}`)
-		.run(err => {
-			t.ifError(err);
-			t.true(fs.existsSync(path.join(tmp, 'zopflipng')));
-			t.end();
-		});
+	await binBuild.url('https://github.com/google/zopfli/archive/a29e46ba9f268ab273903558dcb7ac13b9fe8e29.zip', [
+		`mkdir -p ${tmp}`,
+		`make zopflipng && mv ./zopflipng ${path.join(tmp, 'zopflipng')}`
+	])
+		.then(() => t.true(fs.existsSync(path.join(tmp, 'zopflipng'))));
 });
 
 test('return path to binary and verify that it is working', async t => {
-	t.true(await binCheck(require('../'), ['--help']));
+	t.true(await binCheck(require('..'), ['--help']));
 });
 
 test('minify a PNG', async t => {
@@ -42,7 +38,7 @@ test('minify a PNG', async t => {
 		dest
 	];
 
-	await execa(require('../'), args);
+	await execa(require('..'), args);
 	const res = await compareSize(src, dest);
 
 	t.true(res[dest] < res[src]);
