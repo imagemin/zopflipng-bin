@@ -29,7 +29,7 @@
     "zopflipng": "cli.js"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "scripts": {
     "postinstall": "node lib/install.js",
@@ -52,16 +52,16 @@
     "zopflipng"
   ],
   "dependencies": {
-    "bin-build": "^2.2.0",
-    "bin-wrapper": "^3.0.0",
-    "logalot": "^2.0.0"
+    "bin-build": "^3.0.0",
+    "bin-wrapper": "^4.0.1",
+    "logalot": "^2.1.0"
   },
   "devDependencies": {
-    "ava": "*",
-    "bin-check": "^4.0.1",
+    "ava": "^0.25.0",
+    "bin-check": "^4.1.0",
     "compare-size": "^3.0.0",
-    "execa": "^0.8.0",
+    "execa": "^1.0.0",
     "tempy": "^0.2.1",
-    "xo": "*"
+    "xo": "^0.23.0"
   }
 }
