@@ -3,7 +3,7 @@ os:
   - linux
   - windows
 node_js:
-  - 'stable'
+  - 'node'
   - '10'
   - '8'
   - '6'
