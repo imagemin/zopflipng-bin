@@ -15,13 +15,14 @@ test('rebuild the zopflipng binaries', async t => {
 		return;
 	}
 
-	const tmp = tempy.directory();
+	const temporary = tempy.directory();
 
 	await binBuild.url('https://github.com/google/zopfli/archive/zopfli-1.0.3.zip', [
-		`mkdir -p ${tmp}`,
-		`make zopflipng && mv ./zopflipng ${path.join(tmp, 'zopflipng')}`
-	])
-		.then(() => t.true(fs.existsSync(path.join(tmp, 'zopflipng'))));
+		`mkdir -p ${temporary}`,
+		`make zopflipng && mv ./zopflipng ${path.join(temporary, 'zopflipng')}`
+	]);
+
+	t.true(fs.existsSync(path.join(temporary, 'zopflipng')));
 });
 
 test('return path to binary and verify that it is working', async t => {
@@ -29,9 +30,9 @@ test('return path to binary and verify that it is working', async t => {
 });
 
 test('minify a PNG', async t => {
-	const tmp = tempy.directory();
+	const temporary = tempy.directory();
 	const src = path.join(__dirname, 'fixtures/test.png');
-	const dest = path.join(tmp, 'test.png');
+	const dest = path.join(temporary, 'test.png');
 	const args = [
 		'--lossy_8bit',
 		src,
@@ -39,7 +40,7 @@ test('minify a PNG', async t => {
 	];
 
 	await execa(require('..'), args);
-	const res = await compareSize(src, dest);
+	const result = await compareSize(src, dest);
 
-	t.true(res[dest] < res[src]);
+	t.true(result[dest] < result[src]);
 });
