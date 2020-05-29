@@ -17,7 +17,7 @@ test('rebuild the zopflipng binaries', async t => {
 
 	const temporary = tempy.directory();
 
-	await binBuild.url('https://github.com/google/zopfli/archive/zopfli-1.0.3.zip', [
+	await binBuild.file(path.resolve(__dirname, '../vendor/source/zopfli-1.0.3.tar.gz'), [
 		`mkdir -p ${temporary}`,
 		`make zopflipng && mv ./zopflipng ${path.join(temporary, 'zopflipng')}`
 	]);
