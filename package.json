@@ -29,7 +29,7 @@
     "zopflipng": "cli.js"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=10"
   },
   "scripts": {
     "postinstall": "node lib/install.js",
@@ -57,11 +57,11 @@
     "logalot": "^2.1.0"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^3.8.0",
     "bin-check": "^4.1.0",
     "compare-size": "^3.0.0",
-    "execa": "^1.0.0",
-    "tempy": "^0.2.1",
-    "xo": "^0.23.0"
+    "execa": "^4.0.0",
+    "tempy": "^0.5.0",
+    "xo": "^0.30.0"
   }
 }
