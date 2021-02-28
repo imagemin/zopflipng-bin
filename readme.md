@@ -1,4 +1,5 @@
-# zopflipng-bin [![Build Status](https://travis-ci.org/imagemin/zopflipng-bin.svg?branch=master)](https://travis-ci.org/imagemin/zopflipng-bin)
+# zopflipng-bin ![GitHub Actions Status](https://github.com/imagemin/zopflipng-bin/workflows/test/badge.svg?branch=master)
+
 
 > [zopfli](https://github.com/google/zopfli) Compression Algorithm is a new zlib (gzip, deflate) compatible compressor that takes more time (~100x slower), but compresses around 5% better than zlib and better than any other zlib-compatible compressor
 
