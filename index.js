@@ -1,4 +1,3 @@
-'use strict';
-const lib = require('./lib');
+import lib from './lib/index.js';
 
-module.exports = lib.path();
+export default lib.path();
