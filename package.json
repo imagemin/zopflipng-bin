@@ -1,10 +1,10 @@
 {
   "name": "zopflipng-bin",
-  "version": "6.0.1",
+  "version": "7.0.0",
   "description": "`zopflipng` wrapper that makes it seamlessly available as a local dependency",
   "license": "MIT",
   "repository": "imagemin/zopflipng-bin",
-	"type": "module",
+  "type": "module",
   "author": {
     "name": "Shogo Sensui",
     "email": "shogosensui@gmail.com",
@@ -30,7 +30,7 @@
     "zopflipng": "cli.js"
   },
   "engines": {
-		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "scripts": {
     "postinstall": "node lib/install.js",
