@@ -5,6 +5,7 @@
   "license": "MIT",
   "repository": "imagemin/zopflipng-bin",
   "type": "module",
+  "exports": "./index.js",
   "author": {
     "name": "Shogo Sensui",
     "email": "shogosensui@gmail.com",
